@@ -1,0 +1,8 @@
+minbif (1:1.0~alpha+git20090928+b000766-1) unstable; urgency=low
+
+  * inetd mode is now deprecated in favor of daemon mode; you can changer
+    this behavior by editing /etc/default/minbif, and adding the proper
+    line by hand in /etc/inetd.conf.
+
+ -- Sebastien Delafond <seb@debian.org>  Mon, 28 Sep 2009 15:28:50 +0200
+

@@ -1,0 +1,2 @@
+# Uncomment to let minbif initscript run
+ENABLED=1

@@ -1,0 +1,83 @@
+#!/usr/bin/make -f
+
+COMMON_FLAGS := -DCMAKE_INSTALL_PREFIX=/usr -DCONF_PREFIX=/etc/minbif -DENABLE_CACA=ON -DENABLE_VIDEO=OFF -DENABLE_PLUGIN=ON -DENABLE_PAM=ON -DENABLE_TLS=ON -DCMAKE_C_FLAGS="$(CFLAGS)" -DCMAKE_LD_FLAGS="-Wl,-z,defs" -DCMAKE_CXX_FLAGS="$(CXXFLAGS)" -DCMAKE_SKIP_RPATH=ON -DCMAKE_VERBOSE_MAKEFILE=ON
+
+builddir/Makefile:
+	dh_testdir
+	mkdir -p builddir
+	cd builddir && cmake .. $(COMMON_FLAGS)
+
+build: build-arch build-indep
+build-arch: build-stamp
+build-indep: build-stamp
+
+build-stamp:  builddir/Makefile
+	dh_testdir
+	$(MAKE) -C builddir
+	touch $@
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+	rm -rf builddir build.minbif
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_installdirs
+
+	$(MAKE) -C builddir DESTDIR=$(CURDIR)/debian/minbif install
+
+	mkdir -p $(CURDIR)/debian/minbif-common/usr/share/
+	mv $(CURDIR)/debian/minbif/usr/share/* $(CURDIR)/debian/minbif-common/usr/share/
+	mv $(CURDIR)/debian/minbif-common/usr/share/doc/minbif $(CURDIR)/debian/minbif-common/usr/share/doc/minbif-common
+	mv $(CURDIR)/debian/minbif/usr/lib $(CURDIR)/debian/minbif-common/usr/
+	mv $(CURDIR)/debian/minbif/etc/* $(CURDIR)/debian/minbif-common/etc/
+
+	cp -r $(CURDIR)/scripts $(CURDIR)/debian/minbif-common/usr/share/minbif
+
+	find  $(CURDIR)/debian -name .git -exec rm "{}" \;
+
+	rm -f $(CURDIR)/debian/minbif*/usr/share/doc/minbif-common/COPYING*
+	rm -rf $(CURDIR)/debian/minbif/usr/share
+
+# Build architecture-independent files here.
+binary-indep: install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs -p minbif-common ChangeLog
+	dh_installdocs -X CMakeLists.txt --link-doc=minbif-common
+	dh_installexamples -p minbif-common
+#	dh_install
+#	dh_installmenu
+#	dh_installdebconf
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_python
+	dh_installinit -p minbif-common --init-script=minbif --no-restart-on-upgrade
+#	dh_installcron
+#	dh_installinfo
+	dh_installman -p minbif-common
+	dh_link
+	dh_strip --dbg-package=minbif-dbg
+	dh_compress
+	dh_fixperms
+#	dh_perl
+#	dh_makeshlibs
+	dh_lintian
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

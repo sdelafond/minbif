@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+# Replace documentation directory with symlink
+docdir="/usr/share/doc/minbif"
+if [ -d $docdir ] && [ ! -L $docdir ]; then
+    if rmdir $docdir 2>/dev/null; then
+        ln -sf minbif-common $docdir
+    fi
+fi
+
+#DEBHELPER#
+
+exit 0

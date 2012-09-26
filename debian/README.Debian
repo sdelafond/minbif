@@ -1,0 +1,16 @@
+minbif for Debian
+-----------------
+
+By default, minbif runs as a daemon; if you'd like to run it from
+inetd, simply install an inetd daemon, run dpkg-reconfigure
+minbif-common, and change ENABLED to 0 in /etc/default/minbif-common.
+
+Note that the first time you connect, you'll need to use a password,
+which you'll then have to remember for subsequent connections.
+
+The following two links should help you getting started:
+
+  http://symlink.me/wiki/minbif/Quick_start
+  http://symlink.me/wiki/minbif/Command_list
+
+ -- Sebastien Delafond <seb@debian.org>, Mon,  1 Feb 2010 11:24:10 +0100

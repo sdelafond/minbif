@@ -1,0 +1,104 @@
+Source: minbif
+Section: net
+Priority: optional
+Maintainer: Sebastien Delafond <seb@debian.org>
+Build-Depends: debhelper (>= 7.4.2), cmake, libimlib2-dev, libpurple-dev (>= 2.6.1), libxml2-dev (>= 2.5), libcaca-dev, libgnutls-dev, libpam0g-dev
+Standards-Version: 3.9.3
+Homepage: http://symlink.me/wiki/minbif
+Vcs-Git: git://git.symlink.me/pub/seb/minbif-debian.git
+Vcs-Browser: http://git.symlink.me/?p=seb/minbif-debian.git;a=summary
+
+Package: minbif-common
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser, tcpd
+Suggests: openbsd-inetd | inet-superserver
+Description: IRC-to-other-IM-networks gateway using Pidgin library (common files)
+ Minbif is an IRC gateway to IM networks which provides the following features:
+  * Minbif uses a library which abstracts all IM calls, and has several
+    plugins to support more than 15 IM protocols (IRC included!);
+  * Two modes: inetd and daemon fork;
+  * Only IRC commands are used to control Minbif;
+  * Certificates check;
+  * Buddies are IRC users;
+  * Each account has a status channel. You see in all connected
+    buddies, and their status on it;
+  * Add and remove buddies from list with /INVITE and /KICK commands;
+  * Blocked users are bans on the account's status channel;
+  * Display when a buddy is typing a message;
+  * Can chat with someone who is not in your buddy list;
+  * You can see buddies' icons (with libcaca) or download them;
+  * DCC SEND an image to set your icon on IM networks;
+  * Display extended information about buddies with /WII command;
+  * Support away messages;                 
+  * Can send and receive files, which are sent or received to/from your
+    IRC client with DCC SEND;
+  * Conversation channels are supported;   
+  * Auto\-rejoin conversation channels at connection;
+  * Display list of channels on an IM account with /LIST;
+  * irssi scripts to increase your user experience of minbif;
+  * CoinCoin plugin for libpurple.         
+ .
+ This package contains the documentation and common plugins.
+
+Package: minbif
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, minbif-common
+Conflicts: minbif-webcam
+Description: IRC-to-other-IM-networks gateway using Pidgin library
+ Minbif is an IRC gateway to IM networks which provides the following features:
+  * Minbif uses a library which abstracts all IM calls, and has several
+    plugins to support more than 15 IM protocols (IRC included!);
+  * Two modes: inetd and daemon fork;
+  * Only IRC commands are used to control Minbif;
+  * Certificates check;
+  * Buddies are IRC users;
+  * Each account has a status channel. You see in all connected
+    buddies, and their status on it;
+  * Add and remove buddies from list with /INVITE and /KICK commands;
+  * Blocked users are bans on the account's status channel;
+  * Display when a buddy is typing a message;
+  * Can chat with someone who is not in your buddy list;
+  * You can see buddies' icons (with libcaca) or download them;
+  * DCC SEND an image to set your icon on IM networks;
+  * Display extended information about buddies with /WII command;
+  * Support away messages;                 
+  * Can send and receive files, which are sent or received to/from your
+    IRC client with DCC SEND;
+  * Conversation channels are supported;   
+  * Auto\-rejoin conversation channels at connection;
+  * Display list of channels on an IM account with /LIST;
+  * irssi scripts to increase your user experience of minbif;
+  * CoinCoin plugin for libpurple.         
+
+Package: minbif-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: minbif (= ${binary:Version}), minbif-common (= ${binary:Version}), ${misc:Depends}
+Description: IRC-to-other-IM-networks gateway using Pidgin library (dbg)
+ Minbif is an IRC gateway to IM networks which provides the following features:
+  * Minbif uses a library which abstracts all IM calls, and has several
+    plugins to support more than 15 IM protocols (IRC included!);
+  * Two modes: inetd and daemon fork;
+  * Only IRC commands are used to control Minbif;
+  * Certificates check;
+  * Buddies are IRC users;
+  * Each account has a status channel. You see in all connected
+    buddies, and their status on it;
+  * Add and remove buddies from list with /INVITE and /KICK commands;
+  * Blocked users are bans on the account's status channel;
+  * Display when a buddy is typing a message;
+  * Can chat with someone who is not in your buddy list;
+  * You can see buddies' icons (with libcaca) or download them;
+  * DCC SEND an image to set your icon on IM networks;
+  * Display extended information about buddies with /WII command;
+  * Support away messages;                 
+  * Can send and receive files, which are sent or received to/from your
+    IRC client with DCC SEND;
+  * Conversation channels are supported;   
+  * Auto\-rejoin conversation channels at connection;
+  * Display list of channels on an IM account with /LIST;
+  * irssi scripts to increase your user experience of minbif;
+  * CoinCoin plugin for libpurple.         
+ .
+ This package provides debugging symbols.
