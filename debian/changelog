@@ -1,3 +1,9 @@
+minbif (1:1.0.5+git20120508-3) unstable; urgency=medium
+
+  * Build against libgnutls28-dev (Closes: #753130)
+
+ -- Sebastien Delafond <seb@debian.org>  Sun, 29 Jun 2014 16:30:37 +0200
+
 minbif (1:1.0.5+git20120508-2.1) unstable; urgency=low
 
   * Non-maintainer upload.
