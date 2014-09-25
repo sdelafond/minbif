@@ -1,0 +1,60 @@
+Minbif is a free software written by:
+
+Romain Bignon <romain@peerfuse.org>
+        * Lead developer;
+        * Developer of the prpl-coincoin plugin.
+
+Marc Dequènes (Duck) <Duck@DuckCorp.org>
+        * PAM authentication;
+        * TLS support;
+        * Developer of the prpl-gayattitude plugin.
+
+Sebastien Delafond <sdelafond@gmail.com>
+        * Maintainer of the Debian package;
+        * irssi scripts.
+
+Josh Marchán <sykopomp@sykosomatic.org>
+        * Fixes related to the IRC protocol.
+
+William Lallemand <wlallemand@gmail.com>
+        * Patch related to PAM.
+
+Julien Miotte <jmiotte@inl.fr>
+        * Various patches on the IRC protocol.
+
+Laurent Bachelier <laurent@bachelier.name>
+        * Patches on cmake and configuration files.
+
+Justin Wheeler <minbif@datademons.com>
+        * irssi scripts.
+
+CissWit <cisswit@6-8.fr>
+        * weechat scripts.
+
+varogami <varogami@gmail.com>
+        * weechat script to rename Facebook buddies.
+
+Matias Russitto <matias@russitto.com>
+        * irssi Google+ renamer script.
+
+Frank Steinborn <steinex@nognu.de>
+        * Maintainer of the FreeBSD port.
+
+Francois Lallart <fraff@free.fr>
+        * Parameters management with /WHO.
+
+Brandon Williams <driftx@gmail.com>
+        * Patch on /JOIN command.
+
+Thomas Lecavelier <ook@ookook.fr>
+        * Ass-kisser on DLFP;
+        * Use of imlib to load sent buddy icons.
+
+Michael Scherer <misc@ephaone.org>
+        * Patch on cmake files.
+
+Landry Breuil <landry@rhaalovely.net>
+        * Maintainer of the OpenBSD port.
+
+Discover how to contribute to this great software:
+http://minbif.im/How_to_contribute

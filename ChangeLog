@@ -1,0 +1,237 @@
+Minbif 1.0.5 (2011-12-04)
+	* Add an option 'file_transfers/dcc_own_ip' in config file.
+	* Change weechat's script to ignore the 'request' nick.
+	* When a new request is received during process of an other one, tell
+	  user.
+	* Add a facebook rename script for weechat.
+	* Change users of child process with pam authentification.
+	* Escape URL entities in /JOIN params.
+	* Add a /SCONNECT alias to /CONNECT.
+	* Can use wildcards to match buddies with /WHO.
+	* prpl-coincoin: support hh:mm:ss:ref norloge syntax.
+	* prpl-coincoin: works with the new version of the DLFP board.
+	* Fix: prevent crash with the msn plugin.
+	* Fix: conversion to IRC escape chars.
+	* Fix: compatibility with libpurple 2.8+.
+
+Minbif 1.0.4 (2010-09-20)
+	* libpurple 2.4 isn't supported anymore.
+	* /WHO can take -s to display status instead of realname.
+	* Support multilines messages by waiting a delay before sending buffer
+	  (#195).
+	* Send RPL_MYINFO and RPL_ISUPPORT at connection to be RFC 2812
+	  compliant.
+	* Only /SVSNICK sends aliases server side.
+	* New command '/STATS p' to manage libpurple plugins.
+	* /MAP commands have to match the start of the exact name.
+	* With '/MAP add', decode usernames as URL-encoded (#338).
+	* Do not add '0' at the end of the new account ID when it's the first
+	  one.
+	* Allow joining a remote channel even if account is disconnected
+	  (#387).
+	* New option '-m' to binary to select the server mode to create.
+	* Add im_typing_notice script for weechat.
+	* prpl-coincoin new features: support clocks without seconds, can
+	  refer to a previous message by writing the nickname, etc.
+	* Fix: crash when which occurs sometimes when disconnecting from an
+	  account.
+	* Fix: don't warn about aborted joins if the account is not connected
+	  while removing it (#337).
+	* Fix: issues with multilines received messages (#331).
+	* Fix: use unicode in status channel topics.
+	* Fix: ability to unset status.
+	* Fix: file descriptor leak in daemon fork mode.
+	* Fix: infinite loop when there are more than 2 accounts without any
+	  ID set.
+
+Minbif 1.0.3 (2010-05-15)
+	* Use /topic on status channels to change your status message (#210).
+	* With field requests, display image fields with libcaca.
+	* Improvement of bans management (match wildcards, fix parsing, etc.).
+	* When starting to chat with a buddy in a status channel, every
+	  received messages from this buddy are displayed in the status channel
+	  (#179).
+	* Do not allow two IRC clients to be logged at the same time on the
+	  same account (only with the daemon fork mode) (#178).
+	* Display the current status of a buddy in /WHOIS when he is not away.
+	* Default value of 'server_alias' is now 'true'.
+	* Works with libpurple 2.7.0.
+	* Fix: crash with conversations (occured when a buddy sends a message,
+	  then disconnects/reconnects and re-send a message) (#258).
+	* Fix: crash when closing a request.
+	* Fix: compilation on FreeBSD (now using a buildbot slave on this OS)
+	  (#255).
+	* Fix: /svsnick collision detection.
+	* Fix: crash when nobody connects to DCC server.
+	* Fix: crash when a buddy has an icon without any path (wtf).
+
+Minbif 1.0.2 (2010-04-05)
+	* TLS support.
+	* New 'maxcon' parameter to limit simultaneous connections.
+	* /TOPIC on a status channel change your status on attached accounts.
+	* Can put '%XX' in remote channel names to join, to insert special
+	  characters (for example spaces).
+	* Auto-reconnect on accounts only when disconnection was because of a
+	  network error.
+	* Display account ID and more information in requests.
+	* Aibility to not store password on an account (it is requested at
+	  connection).
+	* Aibility to edit password with '/MAP edit'.
+	* Use imlib2 to convert received buddyicons to right encoded images.
+	* Send several PRIVMSG or NOTICE when there are \n in message.
+	* Better display of /MAP replies (with stats on accounts).
+	* /ADMIN voiced_buddies: enable or disable voices on status channels.
+	* /ADMIN accept_nobuddies_messages: if disabled, messages from unknown
+	  buddies are not displayed (prevent spam).
+	* /ADMIN server_aliases: enable or disable sending of aliases
+	  server-side.
+	* 'server_aliases' accounts parameter to enable or disable sending of
+	  aliases server-side on a specific account.
+	* Command '/STATS u' to display server uptime.
+	* Command '/STATS o' to display every available minbif administrator
+	  and their email address.
+	* Command '/INFO' to display copyright information.
+	* Irssi script to auto-rename facebook buddies.
+	* Fix: pam default configuration.
+	* Fix: chat buddy's nickname when users have a jabber resource.
+	* Fix: crash with '/STATS c' on a disconnected account.
+	* Fix: compilation on strange compilers.
+	* Fix: typing notices were broken.
+	* Fix: crash when removing an account which have an active request.
+	* Fix: prevent empty nicknames.
+	* Fix: sent buddy icons cut on the bottom.
+
+Minbif 1.0.1 (2010-01-16)
+	* PAM authentication.
+	* /MAP CMD command to run a specific command on an account, which
+	  allow you to change nickname, mood messages, etc.
+	* Support fields requests.
+	* Display group name in IRC user realname.
+	* The /MAP REGISTER command registers account on server before adding
+	  it.
+	* Conf option to enable the purple conv logging.
+	* /CMD command to send commands in a conversation
+	* Display date before delayed messages if they hasn't been sent today.
+	* Fix: daemonize correctly.
+	* Fix: security issue when a global password is set on the minbif
+	  server, it creates the userdir before checking if the password is
+	  correct.
+	* Fix: buddy's realnames wasn't updated in realtime.
+	* Fix: the PONG reply wasn't RFC compliant.
+	* Fix: crash in NAMES and TOPIC commands when giving an invalid chan
+	  name.
+	* Fix: don't typing notice unless either bitlbee_send_typing or
+	  typing_notice is true.
+
+Minbif 1.0 (2009-11-18)
+	* Global proxy settings with the /ADMIN command.
+	* Ability to set parameters when joining a conversation channel.
+	* /STATS c: display all available parameters of a specific account.
+	* Transliteration of buddies' IRC nicknames.
+	* Handle mIRC format chars when sending a message.
+	* gayattitude: new prpl-plugin.
+	* coincoin: improvment.
+	* accounts: fix auto-reconnection.
+	* Fix: remove a status channel when there isn't any associated account.
+	* Fix: fix crash when rehashing twice.
+	* Fix: memory leaks.
+
+Minbif 1.0-rc2 (2009-10-28)
+	* Timestamps of delayed messages are bold formatted.
+	* coincoin: fix bad-encoded xml files.
+	* coincoin: display nickname of message sender before timestamps.
+
+Minbif 1.0-rc (2009-10-24)
+	* Auto-rejoin channels when disconnect/reconnect to an IM account, or
+	  when restart minbif.
+	* Channel users status changes are propagated to IRC user.
+	* /TOPIC command to change the conversation channel topic.
+	* Aibility to chat with a channel member.
+	* When an unknown buddy tries to send a message, create a temporary
+	  IRC user to chat with him anyway.
+	* /ADMIN log_level: change the log level.
+	* can change ID and status channel of an account with /MAP EDIT.
+	* /LIST <accid>: display list of channels for an account.
+	* MSN protocol: use /JOIN #nickname:accid to create a group chat with
+	  a buddy.
+	* prpl-coincoin: plugin to connect to a DaCode board.
+	* Reorganization of CMakeLists.txt files.
+	* Fix: Use libcaca 'irc' output for buddy icons.
+	* Fix: Correctly send a ERR_NOSUCHCHANNEL reply when a channel can't
+	  be joined.
+	* Fix: TYPING: send stale state to avoid the irssi's plugin to timeout.
+	* Fix: crash when a notify field is NULL.
+
+Minbif 1.0-beta2 (2009-10-10)
+	* CACAcam works.
+	* scripts/irssi/im_cacacam.pl: irssi script to display CACAcam in the
+	  buddy's query.
+	* Files send supported (/DCC SEND).
+	* Set accounts icon with /DCC SEND buddyicon.
+	* Daemon-fork mode supports IPv6.
+	* Display a MOTD at connection, or with the /MOTD command.
+	* Parameter irc/buddy_icons_url to display an URL to download icon in
+	  /WHOIS.
+	* /ADMIN away_idle (bool): enable/disable away when idling.
+	* /SVSNICK: reject invalid nicks.
+	* /MAP edit: edit an account.
+	* /OPER: authenticate as an IRC operator.
+	* /WALLOPS: oper command to send a wallops message to every launched
+	  minbif.
+	* /DIE: kill every minbif instances.
+	* /REHASH: reload configuration of every launched minbif.
+	* Handle SIGHUP signal to reload configuration file.
+	* IPC channel in daemon fork mode, to broadcast several commands.
+	* Wrote tests system.
+	* A buildbot is setup on http://buildbot.symlink.me
+	* Fix: join MSN channels when invited (it's still buggous, but doesn't
+	  crash anymore).
+	* Fix: memory leak with CACAImage.
+	* Fix: crash when an alias is overrided by server.
+	* Fix: iso-8859-15 charset crash.
+
+Minbif 1.0-beta (2009-09-28)
+	* Daemon fork mode.
+	* Ability to protect the minbif server with a password.
+	* File transfers support for reception.
+	* Buggy implementation of CACAcam (do not use it!).
+	* /SVSNICK command to change a buddy's nickname.
+	* /WHO can match on a server name or an account name.
+	* /NAMES command.
+	* /MAP ADD without any channel name will use the default &minbif
+	  channel.
+	* /AWAY command.
+	* '/STATS a' to display every available away status.
+	* /WHOIS displays the fully away message.
+	* /WII displays a larger icon and several information about buddy.
+	* /ADMIN command to display and change some minbif account parameters.
+	* Correctly handle the /ME command.
+	* Can leave status channels.
+	* Display notify messages.
+	* Auto-reconnect when disconnected by server.
+	* Auto-rejoin remote channels when reconnecting to minbif.
+	* Display remote channel topics.
+	* Display remote channel history at join (if supported by protocol).
+	* libpurple error messages are logged with the PURPLE loglevel.
+	* Handle SIGTERM.
+	* Support CTCP TYPING.
+	* Imported some bitlbee's irssi scripts and changed them to support
+	  minbif.
+	* Added a manpage.
+	* Fix: crash when a remote channel member leaves.
+	* Fix: crash when a remote channel member changes his nickname.
+	* Fix: hilight messages were not displayed.
+	* Fix: correctly handle when a user tries to add me in his buddy list.
+
+Minbif 1.0-alpha (2009-05-10)
+	* First revision of project
+	* Minbif uses a library which abstracts all IM calls, and has several
+	  plugins to support a lot of IM protocols (IRC included!).
+	* Only IRC commands are used to command Minbif.
+	* Buddies are IRC users.
+	* Each account has a status channel. You see in all connected buddies,
+	  and their status on it.
+	* Add and remove buddies from list with /INVITE and /KICK commands.
+	* Blocked users are bans on the account's status channel.
+	* You can see buddies' icons (with libcaca) or download them.
+	* Conversation chats are supported.
