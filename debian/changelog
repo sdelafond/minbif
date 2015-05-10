@@ -1,3 +1,10 @@
+minbif (1:1.0.5+git20150505-1) unstable; urgency=medium
+
+  * New upstream version (Closes: #782825)
+  * Bump up Standards-Version
+
+ -- Sebastien Delafond <seb@debian.org>  Sun, 10 May 2015 18:14:00 +0200
+
 minbif (1:1.0.5+git20120508-4) unstable; urgency=medium
 
   * Move git repository to alioth's collab-maint
