@@ -146,6 +146,7 @@ Protocol::Options Account::getOptions() const
 		switch(option.getType())
 		{
 			case Protocol::Option::STR:
+			case Protocol::Option::STR_LIST:
 				option.setValue(purple_account_get_string(account, option.getName().c_str(), option.getValue().c_str()));
 				break;
 			case Protocol::Option::INT:
@@ -184,6 +185,7 @@ void Account::setOptions(const Protocol::Options& options)
 		switch(option.getType())
 		{
 			case Protocol::Option::STR:
+			case Protocol::Option::STR_LIST:
 				purple_account_set_string(account,
 							  option.getName().c_str(),
 							  option.getValue().c_str());
@@ -273,7 +275,7 @@ void Account::setBuddyIcon(string filename)
 				else
 				{
 					char** prpl_formats = g_strsplit(prplinfo->icon_spec.format,",",0);
-					ImlibLoadError err = IMLIB_LOAD_ERROR_UNKNOWN;
+					Imlib_Load_Error err = IMLIB_LOAD_ERROR_UNKNOWN;
 
 					close(temp_fd);
 					/* Try to encode in a supported format. */

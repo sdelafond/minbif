@@ -1,0 +1,7 @@
+/build/
+doc/html
+*.so
+*.pyc
+Session.vim
+tests/config.py
+Makefile.options.local
