@@ -1,0 +1,3 @@
+# those are just [ -x /usr/bin/update-inetd ] tests
+minbif-common: command-with-path-in-maintainer-script postinst:22 /usr/bin/update-inetd
+minbif-common: command-with-path-in-maintainer-script postrm:5 /usr/bin/update-inetd
