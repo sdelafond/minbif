@@ -1,3 +1,16 @@
+minbif (1:1.0.5+git20150505-2) unstable; urgency=medium
+
+  * Bump up Standards-Version
+  * Update debian/watch
+  * Update Vcs-* to point to salsa.d.o
+  * Remove unused patches
+  * Update debian/copyright
+  * Remove extra whitespaces in debian/{changelog,control}
+  * Remove -dbg package
+  * More lintian fixes
+
+ -- Sebastien Delafond <seb@debian.org>  Wed, 24 Jan 2018 13:27:06 +0100
+
 minbif (1:1.0.5+git20150505-1) unstable; urgency=medium
 
   * New upstream version (Closes: #782825)
