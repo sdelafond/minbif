@@ -29,14 +29,14 @@ Description: IRC-to-other-IM-networks gateway using Pidgin library (common files
   * You can see buddies' icons (with libcaca) or download them;
   * DCC SEND an image to set your icon on IM networks;
   * Display extended information about buddies with /WII command;
-  * Support away messages;                 
+  * Support away messages;
   * Can send and receive files, which are sent or received to/from your
     IRC client with DCC SEND;
-  * Conversation channels are supported;   
+  * Conversation channels are supported;
   * Auto\-rejoin conversation channels at connection;
   * Display list of channels on an IM account with /LIST;
   * irssi scripts to increase your user experience of minbif;
-  * CoinCoin plugin for libpurple.         
+  * CoinCoin plugin for libpurple.
  .
  This package contains the documentation and common plugins.
 
@@ -61,11 +61,11 @@ Description: IRC-to-other-IM-networks gateway using Pidgin library
   * You can see buddies' icons (with libcaca) or download them;
   * DCC SEND an image to set your icon on IM networks;
   * Display extended information about buddies with /WII command;
-  * Support away messages;                 
+  * Support away messages;
   * Can send and receive files, which are sent or received to/from your
     IRC client with DCC SEND;
-  * Conversation channels are supported;   
+  * Conversation channels are supported;
   * Auto\-rejoin conversation channels at connection;
   * Display list of channels on an IM account with /LIST;
   * irssi scripts to increase your user experience of minbif;
-  * CoinCoin plugin for libpurple.         
+  * CoinCoin plugin for libpurple.
