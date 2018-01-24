@@ -72,7 +72,7 @@ binary-arch: install
 #	dh_installinfo
 	dh_installman -p minbif-common
 	dh_link
-	dh_strip --dbg-package=minbif-dbg
+	dh_strip
 	dh_compress
 	dh_fixperms
 #	dh_perl
