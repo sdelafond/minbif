@@ -2,5 +2,5 @@
 version=3
 
 opts="uversionmangle=s/(rc|beta|alpha)/~$1/i"\
- http://symlink.me/projects/list_files/minbif \
+ https://symlink.me/projects/list_files/minbif \
  .*?/minbif-(\d.*)\.tar\.gz debian uupdate
